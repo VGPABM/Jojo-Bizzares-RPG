@@ -1,6 +1,7 @@
 #include "MainMenuState.h"
 
 
+
 //Initializer Functions
 void MainMenuState::initVariables()
 {
@@ -104,6 +105,12 @@ void MainMenuState::updateButtons()
 	if (this->buttons["GAME_STATE"]->isPressed())
 	{
 		this->states->push(new GameState(this->window, this->supportedKeys, this->states));
+	}
+
+	//EditorState
+	if (this->buttons["EDITOR_STATE"]->isPressed())
+	{
+		this->states->push(new EditorState(this->window, this->supportedKeys, this->states));
 	}
 
 	//Quit the game
